@@ -1,7 +1,15 @@
+# Extrator URL
 url = "https://bytebank.com/cambio?moedaOrigem=real&moedaDestino=dolar&quantidade=100"
 
-# Separa a base e os parâmetros
+# Sanitização
+url = url.replace(' ', '')
 
+# Valida URL
+if url == "":
+    raise ValueError('A URL ESTA VAZIA!')
+
+
+# Separa a base e os parâmetros
 indice_interrogacao = url.find('?')
 
 if indice_interrogacao != -1:
